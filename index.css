@@ -1,0 +1,103 @@
+html,
+body {
+  margin: 0 !important;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+h2 {
+  margin: 10px;
+  color: #3958e0;
+}
+
+button {
+  height: 50px;
+  width: 150px;
+  margin-bottom: 10px;
+  border: 2px solid #3958e0;
+  background-color: #121361;
+  color: white;
+  font-size: 18px;
+  border-radius: 7px;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+input {
+  width: 80%;
+  height: 35px;
+  border: 2px solid #3958e0;
+  border-radius: 5px;
+  background-color: black;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  outline: none;
+  font-size: 22px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  color: white;
+}
+
+video {
+  margin: 0;
+}
+
+.main_content #remoteVideo {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  margin: 0;
+  margin-bottom: 20px;
+  background-color: black;
+}
+
+.main_content .button_container {
+  bottom: 20px;
+  margin: auto;
+}
+
+@media screen and (orientation: landscape) {
+  .main_content .button_container {
+    margin-botom: 150px;
+    bottom: -100vh;
+  }
+}
+
+.main_content #webcamVideo {
+  width: 100px;
+  background-color: black;
+  margin: 5px;
+  margin-right: 0;
+  position: absolute;
+  right: 5px;
+  border: 2px solid white;
+}
+
+@media screen and (orientation: landscape) {
+  .main_content #webcamVideo {
+    top: 30vh;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .main_content #webcamVideo {
+    bottom: 30px;
+  }
+}
+
+.main_content #callInput {
+  margin-top: 00px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.main_content .error {
+  margin-top: 10px;
+  color: #3958e0;
+}
+/*# sourceMappingURL=index.css.map */

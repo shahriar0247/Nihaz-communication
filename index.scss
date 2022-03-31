@@ -1,0 +1,94 @@
+$primary: rgb(57, 88, 224);
+$primary_light: rgb(139, 160, 255);
+$primary_dark: rgb(18, 19, 97);
+
+html,
+body {
+    margin: 0 !important;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+h2 {
+    margin: 10px;
+    color: $primary;
+}
+
+button {
+    height: 50px;
+    width: 150px;
+    margin-bottom: 10px;
+    border: 2px solid $primary;
+    background-color: $primary_dark;
+    color: white;
+    font-size: 18px;
+    border-radius: 7px;
+}
+button:disabled {
+    opacity: 0.5;
+}
+input {
+    width: 80%;
+    height: 35px;
+    border: 2px solid $primary;
+
+    border-radius: 5px;
+    background-color: black;
+    width: max-content;
+    outline: none;
+    font-size: 22px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    color: white;
+}
+
+video {
+    margin: 0;
+}
+
+.main_content {
+    #remoteVideo {
+        width: 100%;
+        height: auto;
+        max-height: 85vh;
+        margin: 0;
+        margin-bottom: 20px;
+        background-color: black;
+    }
+    .button_container {
+        bottom: 20px;
+        margin: auto;
+        @media screen and (orientation: landscape) {
+            margin-botom: 150px;
+            bottom: -100vh;
+        }
+    }
+    #webcamVideo {
+        width: 100px;
+        background-color: black;
+        margin: 5px;
+        margin-right: 0;
+        position: absolute;
+        right: 5px;
+        border: 2px solid white;
+
+        @media screen and (orientation: landscape) {
+            top: 30vh;
+        }
+
+        @media screen and (orientation: portrait) {
+            bottom: 30px;
+        }
+    }
+    #callInput {
+        margin-top: 00px;
+        margin-bottom: 10px;
+        display: none;
+    }
+    .error {
+        margin-top: 10px;
+        color: $primary;
+    }
+}

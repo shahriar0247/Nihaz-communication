@@ -2,8 +2,7 @@ import './style.css';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-
-var firebaseConfig_file = require('./firebaseConfig.json');
+import * as firebaseConfig_file from './firebase_config.json';
 
 const firebaseConfig = {
   apiKey:firebaseConfig_file.apiKey ,
@@ -35,7 +34,6 @@ let localStream = null;
 let remoteStream = null;
 
 // HTML elements
-const webcamButton = document.getElementById('webcamButton');
 const webcamVideo = document.getElementById('webcamVideo');
 const callButton = document.getElementById('callButton');
 const callInput = document.getElementById('callInput');
@@ -43,9 +41,7 @@ const answerButton = document.getElementById('answerButton');
 const remoteVideo = document.getElementById('remoteVideo');
 const hangupButton = document.getElementById('hangupButton');
 
-// 1. Setup media sources
 
-webcamButton.onclick = async () => {
   localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
   remoteStream = new MediaStream();
 
@@ -66,8 +62,6 @@ webcamButton.onclick = async () => {
 
   callButton.disabled = false;
   answerButton.disabled = false;
-  webcamButton.disabled = true;
-};
 
 // 2. Create an offer
 callButton.onclick = async () => {
@@ -77,6 +71,8 @@ callButton.onclick = async () => {
   const answerCandidates = callDoc.collection('answerCandidates');
 
   callInput.value = callDoc.id;
+  navigator.clipboard.writeText(callInput.value)
+  error.innerText = "Copied code to clipboard"
 
   // Get candidates for caller, save to db
   pc.onicecandidate = (event) => {
@@ -118,6 +114,7 @@ callButton.onclick = async () => {
 
 // 3. Answer the call with the unique ID
 answerButton.onclick = async () => {
+  callInput.value = await navigator.clipboard.readText()
   const callId = callInput.value;
   const callDoc = firestore.collection('calls').doc(callId);
   const offerCandidates = callDoc.collection('offerCandidates');
