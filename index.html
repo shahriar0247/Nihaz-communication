@@ -13,16 +13,17 @@
             <video id="remoteVideo" autoplay playsinline></video>
 
             <div class="button_container">
-                <video id="webcamVideo" autoplay muted playsinline></video>
                 <br />
                 <button id="callButton" disabled>Start Call</button>
                 <button id="answerButton" disabled>Answer</button>
+                <div class="error" id="error"></div>
 
                 <input id="callInput" />
-                <br />
+
+              </div>
+              <video id="webcamVideo" autoplay muted playsinline></video>
+
             </div>
-            <div class="error" id="error"></div>
-        </div>
 
         <script type="module" src="/main.js"></script>
     </body>

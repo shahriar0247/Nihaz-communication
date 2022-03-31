@@ -71,8 +71,9 @@ callButton.onclick = async () => {
   const answerCandidates = callDoc.collection('answerCandidates');
 
   callInput.value = callDoc.id;
-  navigator.clipboard.writeText(callInput.value)
-  error.innerText = "Copied code to clipboard"
+  let url = location.href + "?answer=" + callInput.value
+  navigator.clipboard.writeText(url)
+  error.innerText = "Send link to your lover"
 
   // Get candidates for caller, save to db
   pc.onicecandidate = (event) => {
@@ -114,7 +115,6 @@ callButton.onclick = async () => {
 
 // 3. Answer the call with the unique ID
 answerButton.onclick = async () => {
-  callInput.value = await navigator.clipboard.readText()
   const callId = callInput.value;
   const callDoc = firestore.collection('calls').doc(callId);
   const offerCandidates = callDoc.collection('offerCandidates');
@@ -153,3 +153,21 @@ answerButton.onclick = async () => {
     });
   });
 };
+
+
+
+function findGetParameter(parameterName) {
+  var result = null,
+      tmp = [];
+  location.search
+      .substr(1)
+      .split("&")
+      .forEach(function (item) {
+        tmp = item.split("=");
+        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+      });
+  return result;
+}
+
+callInput.value = findGetParameter("answer")
+answerButton.click()

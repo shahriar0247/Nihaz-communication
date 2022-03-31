@@ -11,6 +11,7 @@ body {
 
 h2 {
     margin: 10px;
+    margin-top: 20px;
     color: $primary;
 }
 
@@ -52,34 +53,36 @@ video {
     #remoteVideo {
         width: 100%;
         height: auto;
-        max-height: 85vh;
+        max-height: 80vh;
         margin: 0;
         margin-bottom: 20px;
         background-color: black;
     }
     .button_container {
-        bottom: 20px;
         margin: auto;
-        @media screen and (orientation: landscape) {
-            margin-botom: 150px;
-            bottom: -100vh;
+        width: 300px;
+        @media screen and (orientation: portrait) {
+            position: absolute;
+            bottom: 150px;
+            left: 15vw;
         }
     }
     #webcamVideo {
-        width: 100px;
         background-color: black;
         margin: 5px;
         margin-right: 0;
         position: absolute;
         right: 5px;
-        border: 2px solid white;
+        border: 1px solid rgba(255, 255, 255, 0.281);
+        padding: 2px;
 
         @media screen and (orientation: landscape) {
             top: 30vh;
+            width: 20vw;
         }
 
         @media screen and (orientation: portrait) {
-            bottom: 30px;
+            bottom: 00px;
         }
     }
     #callInput {
@@ -89,6 +92,10 @@ video {
     }
     .error {
         margin-top: 10px;
+        margin-bottom: 10px;
         color: $primary;
+    }
+    #answerButton{
+        display: none;
     }
 }

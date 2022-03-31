@@ -4,3 +4,5 @@ dist
 dist-ssr
 *.local
 firebase_config.json
+*.css
+*.css.map
