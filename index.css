@@ -54,6 +54,13 @@ video {
   margin: auto;
 }
 
+.main_content .contents {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 350px;
+      grid-template-columns: 1fr 350px;
+}
+
 .main_content #remoteVideo {
   width: 100%;
   height: auto;
@@ -65,23 +72,27 @@ video {
 
 .main_content .button_container {
   margin: auto;
+  margin-right: 10px;
   width: 300px;
 }
 
 @media screen and (orientation: portrait) {
   .main_content .button_container {
     position: absolute;
-    bottom: 160px;
+    bottom: 0px;
     left: 15vw;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .main_content .button_container {
+    margin-top: -20px;
   }
 }
 
 .main_content #webcamVideo {
   background-color: black;
   margin: 5px;
-  margin-right: 0;
-  position: absolute;
-  right: 5px;
   border: 1px solid rgba(255, 255, 255, 0.281);
   padding: 2px;
 }
@@ -109,6 +120,10 @@ video {
   margin-top: 10px;
   margin-bottom: 10px;
   color: #3958e0;
+}
+
+.main_content #answerButton {
+  display: none;
 }
 
 .main_content #webcamButton {

@@ -9,19 +9,22 @@
     </head>
     <body>
         <div class="main_content">
-        <h2>Nihaz Communication</h2>
+            <h2>Nihaz Communication</h2>
 
-            <video id="remoteVideo" autoplay playsinline></video>
+            <div class="contents">
+                <video id="remoteVideo" autoplay playsinline></video>
 
-            <div class="button_container">
-                <br />
-                <button id="callButton" disabled>Start Call</button>
-                <button id="answerButton" disabled>Answer</button>
-                <button id="webcamButton">Start webcam</button>
-                <div class="error" id="error"></div>
-                <input id="callInput" />
+                <div class="button_container">
+                    <br />
+                    <button id="callButton" disabled>Start Call</button>
+                    <button id="answerButton" disabled>Answer</button>
+                    <button id="answerButton2">Answer</button>
+                    <button id="webcamButton">Start webcam</button>
+                    <div class="error" id="error"></div>
+                    <input id="callInput" />
+                    <video id="webcamVideo" autoplay muted playsinline></video>
+                </div>
             </div>
-            <video id="webcamVideo" autoplay muted playsinline></video>
         </div>
 
         <script type="module" src="/main.js"></script>

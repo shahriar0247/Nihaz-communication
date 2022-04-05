@@ -53,7 +53,10 @@ video {
 .main_content {
     height: 100vh;
     margin: auto;
-
+    .contents{
+        display: grid;
+        grid-template-columns: 1fr 350px;
+    }
     #remoteVideo {
         width: 100%;
         height: auto;
@@ -64,19 +67,21 @@ video {
     }
     .button_container {
         margin: auto;
+        margin-right: 10px;
         width: 300px;
         @media screen and (orientation: portrait) {
             position: absolute;
-            bottom: 160px;
+            bottom: 0px;
             left: 15vw;
+        }
+
+        @media screen and (orientation: landscape) {
+            margin-top: -20px;
         }
     }
     #webcamVideo {
         background-color: black;
         margin: 5px;
-        margin-right: 0;
-        position: absolute;
-        right: 5px;
         border: 1px solid rgba(255, 255, 255, 0.281);
         padding: 2px;
 
@@ -100,6 +105,7 @@ video {
         color: $primary;
     }
     #answerButton{
+        display: none;
  
     }
     #webcamButton{

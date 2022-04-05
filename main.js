@@ -168,8 +168,21 @@ function findGetParameter(parameterName) {
 webcamButton.click();
 
 async function answer_call() {
-    await new Promise((r) => setTimeout(r, 2000));
+    await new Promise((r) => setTimeout(r, 5000));
     callInput.value = findGetParameter("answer");
     answerButton.click();
 }
+
+answerButton2.onclick = async () => {
+    navigator.clipboard
+        .readText()
+        .then((text) => {
+            callInput.value = text
+            answerButton.click();
+
+        })
+        .catch((err) => {
+            console.error("Failed to read clipboard contents: ", err);
+        });
+};
 answer_call();
