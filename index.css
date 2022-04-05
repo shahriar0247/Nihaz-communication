@@ -7,7 +7,8 @@ body {
 
 h2 {
   margin: 10px;
-  margin-top: 20px;
+  margin-top: 0 !important;
+  padding-top: 20px;
   color: #3958e0;
 }
 
@@ -48,6 +49,11 @@ video {
   margin: 0;
 }
 
+.main_content {
+  height: 100vh;
+  margin: auto;
+}
+
 .main_content #remoteVideo {
   width: 100%;
   height: auto;
@@ -65,7 +71,7 @@ video {
 @media screen and (orientation: portrait) {
   .main_content .button_container {
     position: absolute;
-    bottom: 150px;
+    bottom: 160px;
     left: 15vw;
   }
 }
@@ -82,7 +88,7 @@ video {
 
 @media screen and (orientation: landscape) {
   .main_content #webcamVideo {
-    top: 30vh;
+    bottom: 0vh;
     width: 20vw;
   }
 }
@@ -90,13 +96,13 @@ video {
 @media screen and (orientation: portrait) {
   .main_content #webcamVideo {
     bottom: 00px;
+    width: 50vw;
   }
 }
 
 .main_content #callInput {
   margin-top: 00px;
   margin-bottom: 10px;
-  display: none;
 }
 
 .main_content .error {
@@ -105,7 +111,7 @@ video {
   color: #3958e0;
 }
 
-.main_content #answerButton {
+.main_content #webcamButton {
   display: none;
 }
 /*# sourceMappingURL=index.css.map */
