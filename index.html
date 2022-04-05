@@ -5,7 +5,7 @@
         <link rel="icon" type="image/svg+xml" href="favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Nihaz Communication</title>
-        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="./index.css" />
     </head>
     <body>
         <h2>Nihaz Communication</h2>
@@ -16,14 +16,12 @@
                 <br />
                 <button id="callButton" disabled>Start Call</button>
                 <button id="answerButton" disabled>Answer</button>
+                <button id="webcamButton">Start webcam</button>
                 <div class="error" id="error"></div>
-
                 <input id="callInput" />
-
-              </div>
-              <video id="webcamVideo" autoplay muted playsinline></video>
-
             </div>
+            <video id="webcamVideo" autoplay muted playsinline></video>
+        </div>
 
         <script type="module" src="/main.js"></script>
     </body>

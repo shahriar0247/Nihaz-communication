@@ -11,6 +11,7 @@
     "vite-plugin-mkcert": "^1.6.0"
   },
   "dependencies": {
-    "firebase": "^8.2.10"
+    "firebase": "^8.2.10",
+    "surge": "^0.23.1"
   }
 }

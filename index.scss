@@ -88,14 +88,13 @@ video {
     #callInput {
         margin-top: 00px;
         margin-bottom: 10px;
-        display: none;
     }
     .error {
         margin-top: 10px;
         margin-bottom: 10px;
         color: $primary;
     }
-    #answerButton{
-        display: none;
+    #answerButton, #webcamButton{
+ 
     }
 }
