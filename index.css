@@ -3,6 +3,8 @@ body {
   margin: 0 !important;
   background-color: black;
   overflow-x: hidden;
+  height: 100vh;
+  overflow: hidden;
 }
 
 h2 {
@@ -13,13 +15,13 @@ h2 {
 }
 
 button {
-  height: 50px;
-  width: 150px;
-  margin-bottom: 10px;
+  height: 40px;
+  width: 100px;
+  margin-bottom: 5px;
   border: 2px solid #3958e0;
   background-color: #121361;
   color: white;
-  font-size: 18px;
+  font-size: 14px;
   border-radius: 7px;
 }
 
@@ -32,13 +34,10 @@ input {
   height: 35px;
   border: 2px solid #3958e0;
   border-radius: 5px;
-  background-color: black;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  background-color: rgba(0, 0, 0, 0);
   outline: none;
-  font-size: 22px;
-  padding: 5px;
+  max-width: 300px;
+  font-size: 15px;
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
@@ -57,8 +56,6 @@ video {
 .main_content .contents {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 350px;
-      grid-template-columns: 1fr 350px;
 }
 
 .main_content #remoteVideo {
@@ -72,42 +69,45 @@ video {
 
 .main_content .button_container {
   margin: auto;
-  margin-right: 10px;
-  width: 300px;
+  width: 90%;
+  margin: auto;
+  position: absolute;
 }
 
 @media screen and (orientation: portrait) {
   .main_content .button_container {
-    position: absolute;
     bottom: 0px;
-    left: 15vw;
+    left: 5vw;
   }
 }
 
 @media screen and (orientation: landscape) {
   .main_content .button_container {
-    margin-top: -20px;
+    width: 200px;
+    right: 2%;
+    bottom: 2%;
   }
 }
 
 .main_content #webcamVideo {
   background-color: black;
   margin: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.281);
-  padding: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 20vh;
 }
 
 @media screen and (orientation: landscape) {
   .main_content #webcamVideo {
     bottom: 0vh;
-    width: 20vw;
   }
 }
 
 @media screen and (orientation: portrait) {
   .main_content #webcamVideo {
     bottom: 00px;
-    width: 50vw;
   }
 }
 

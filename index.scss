@@ -7,6 +7,8 @@ body {
     margin: 0 !important;
     background-color: black;
     overflow-x: hidden;
+    height: 100vh;
+    overflow: hidden;
 }
 
 h2 {
@@ -17,13 +19,13 @@ h2 {
 }
 
 button {
-    height: 50px;
-    width: 150px;
-    margin-bottom: 10px;
+    height: 40px;
+    width: 100px;
+    margin-bottom: 5px;
     border: 2px solid $primary;
     background-color: $primary_dark;
     color: white;
-    font-size: 18px;
+    font-size: 14px;
     border-radius: 7px;
 }
 button:disabled {
@@ -33,13 +35,11 @@ input {
     width: 80%;
     height: 35px;
     border: 2px solid $primary;
-
     border-radius: 5px;
-    background-color: black;
-    width: max-content;
+    background-color: rgba(0, 0, 0, 0);
     outline: none;
-    font-size: 22px;
-    padding: 5px;
+    max-width: 300px;
+    font-size: 15px;
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
@@ -53,9 +53,8 @@ video {
 .main_content {
     height: 100vh;
     margin: auto;
-    .contents{
+    .contents {
         display: grid;
-        grid-template-columns: 1fr 350px;
     }
     #remoteVideo {
         width: 100%;
@@ -67,32 +66,34 @@ video {
     }
     .button_container {
         margin: auto;
-        margin-right: 10px;
-        width: 300px;
+        width: 90%;
+        margin: auto;
+        position: absolute;
         @media screen and (orientation: portrait) {
-            position: absolute;
             bottom: 0px;
-            left: 15vw;
+            left: 5vw;
         }
 
         @media screen and (orientation: landscape) {
-            margin-top: -20px;
+            width: 200px;
+            right: 2%;
+            bottom: 2%;
         }
     }
     #webcamVideo {
         background-color: black;
         margin: 5px;
-        border: 1px solid rgba(255, 255, 255, 0.281);
-        padding: 2px;
-
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 5px;
+        border-radius: 10px;
+        max-width: 90%;
+        max-height: 20vh;
         @media screen and (orientation: landscape) {
             bottom: 0vh;
-            width: 20vw;
         }
 
         @media screen and (orientation: portrait) {
             bottom: 00px;
-            width: 50vw;
         }
     }
     #callInput {
@@ -104,11 +105,10 @@ video {
         margin-bottom: 10px;
         color: $primary;
     }
-    #answerButton{
+    #answerButton {
         display: none;
- 
     }
-    #webcamButton{
+    #webcamButton {
         display: none;
     }
 }

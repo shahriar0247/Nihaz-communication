@@ -62,6 +62,8 @@ webcamButton.onclick = async () => {
     callButton.disabled = false;
     answerButton.disabled = false;
     webcamButton.disabled = true;
+answer_call();
+
 };
 
 // 2. Create an offer
@@ -74,7 +76,6 @@ callButton.onclick = async () => {
     callInput.value = callDoc.id;
     let url = location.href + "?answer=" + callInput.value;
     navigator.clipboard.writeText(url);
-    error.innerText = "Send link to your lover";
 
     // Get candidates for caller, save to db
     pc.onicecandidate = (event) => {
@@ -168,9 +169,11 @@ function findGetParameter(parameterName) {
 webcamButton.click();
 
 async function answer_call() {
-    await new Promise((r) => setTimeout(r, 5000));
     callInput.value = findGetParameter("answer");
     answerButton.click();
+
+    
+    window.history.pushState('page2', 'Title', location.origin);
 }
 
 answerButton2.onclick = async () => {
@@ -185,4 +188,8 @@ answerButton2.onclick = async () => {
             console.error("Failed to read clipboard contents: ", err);
         });
 };
-answer_call();
+
+
+webcamButton.onclick = async () => {
+    webcamButton.requestFullscreen()
+}
